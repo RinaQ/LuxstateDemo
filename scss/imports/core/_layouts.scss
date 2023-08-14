@@ -1,0 +1,97 @@
+@-ms-viewport {
+    width: device-width;
+}
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%; // => 10px = 1rem
+}
+body {
+    width: 100%;
+    max-width: $container-max-width;
+    margin: auto;
+    @include text(var(--body13-fs), mr, var(--body13-lh), $text-cl, none); // tuỳ chỉnh
+    letter-spacing: -0.25px;
+    background: $bg-main-cl;
+    position: relative;
+    @include customscroll();
+    .container-fluid {
+        width: 100%;
+        padding-right: var(--gap);
+        padding-left: var(--gap);
+        margin-right: auto;
+        margin-left: auto;
+        @include xs {
+            padding-right: calc(var(--gap) / 2);
+            padding-left: calc(var(--gap) / 2);
+        }
+    }
+    .container {
+        width: 100%;
+        padding-right: calc(var(--gap) / 2);
+        padding-left: calc(var(--gap) / 2);
+        margin-right: auto;
+        margin-left: auto;
+        overflow: hidden;
+       
+    }
+
+    @media (min-width: $xxs-min) {
+        .container {
+            max-width: 540px;
+        }
+    }
+    @media (min-width: $xs-min) {
+        .container {
+            max-width: 720px;
+        }
+    }
+    @media (min-width: $sm-min) {
+        .container {
+            max-width: 960px;
+        }
+    }
+    @media (min-width: $md-min) {
+        .container {
+            max-width: $container-width;
+        }
+    }
+   
+    main {
+        width: 100%;
+        margin: auto;
+        @include visible;
+        section {
+            &.pd{
+                 padding: var(--pd-section) 0;
+            }
+            &.--bg-grey{
+                background-color: $grey-cl;
+            }
+        }
+        
+    }
+    @include lg {
+        // CSS responsive large desktop
+    }
+    @include md {
+        --pd-container: calc((100vw - 960px - 15px)/2);
+    }
+    @include sm {
+        --pd-container: calc((100vw - 720px - 15px)/2);
+    }
+    @include xs {
+       --pd-section: 50px;
+       --pd-container: calc((100vw - 540px - 15px)/2);
+    }
+    @include xxs {
+        // CSS responsive small mobile
+    }
+
+}

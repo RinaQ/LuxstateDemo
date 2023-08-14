@@ -1,0 +1,138 @@
+// css footer
+.footer{
+    background-color: $text-cl;
+
+    padding: 75px 0;
+    &__top{
+        display: flex;
+        justify-content: space-between;
+
+        padding-bottom: 65px;
+        border-bottom: 2px solid $white-cl;
+        margin-bottom: 65px;
+        &-left{
+            p{
+                @include text(40px, mb, auto, $white-cl, none);
+                margin-bottom: 10px;
+            }
+        }
+        &-right{
+            position: relative;            
+            .subscribe{
+                display: inline-flex;
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+
+                input{
+                    padding: 25px 15px;
+                    width: 400px;
+                    border: none;
+                    outline: none;
+
+                    background-color: $white-cl;
+                    &::placeholder{
+                        @include text(15px, mr, auto, #919eb1, none);
+                    }
+                }
+                .btn{
+                    border-radius: 0px;
+                    padding: 26px 10px;
+                    
+                    i{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                    }
+                }
+            }
+        }
+    }
+    &__bottom{
+        display: flex;
+        justify-content: space-between;        
+        &-left{
+            .publicdate{
+                font-size: 14px;
+                color: $white-cl;
+                margin-top: 65px;
+                opacity: 0.8;
+                max-width: 140px;
+            }
+        }
+        &-right{
+            display: inline-flex;
+            justify-content: space-between;
+
+            gap: 90px;
+
+            ul{
+                color: $white-cl;
+                p{
+                    text-transform: uppercase;
+                    margin-bottom: 30px;
+
+
+                }
+                li{
+                    padding: 5px 0px;
+
+                    a{
+                        color: $white-cl;
+                        text-decoration: none;
+
+                    }
+                }
+            }
+        }
+    }
+    @include sm {
+        &__top{
+            flex-wrap: wrap;
+            &-right{
+                margin-top: 30px;
+
+                .subscribe{
+                    position: relative;
+                    bottom: initial;
+                    right: initial;
+                }
+            }
+        }
+        &__bottom{
+            &-right{
+                gap: 50px;
+
+            }
+        }
+    }
+     @include xs {
+        &__bottom{
+            // flex-wrap: wrap;
+            display: block;
+            &-left{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 30px;
+
+                .publicdate{
+                    max-width: 100%;
+                    margin-top: 0px;
+                    font-size: 12px;
+
+
+                }
+            }
+            &-right{
+                gap: 80px;
+                justify-content: space-between;
+
+
+                
+            }
+        }
+    }
+
+
+}

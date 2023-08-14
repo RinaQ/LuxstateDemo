@@ -1,0 +1,94 @@
+//======================================================BOXED LAYOUT=======================================================
+
+$container-max-width: 100%;
+$container-width: 1140px; // tùy thuộc vào container của bản thiết kế // $container-width = container (đo từ bản thiết kế) + 30px
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 576px; // CÓ THỂ TÙY CHỈNH
+$xs-min: 768px; // KHÔNG THAY ĐỔI
+$sm-min: 992px; // KHÔNG THAY ĐỔI
+$md-min: 1200px; // KHÔNG THAY ĐỔI
+$lg-min: 1600px; // CÓ THỂ TÙY CHỈNH
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+
+//=====================================CÁC BIẾN KHÔNG THAY ĐỔI GIÁ TRỊ KHI RESPONSIVE======================================
+// primary colors - tuỳ chỉnh
+$yellow-cl: #ffcc01;
+$white-cl: #fff;
+$black-cl: #000;
+$grey-cl: #f6f5f4;
+
+// text colors - tuỳ chỉnh
+$text-cl: #1f373d;
+
+// background colors - tuỳ chỉnh
+$bg-main-cl: #fff;
+
+// timing transition - tuỳ chỉnh
+$t: 0.5s;
+$cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
+
+// ========================================CÁC BIẾN CÓ THAY ĐỔI GIÁ TRỊ KHI RESPONSIVE=====================================
+
+:root {
+    //=========== VÍ DỤ ============//
+
+    // font-size & line-height heading
+
+    --h1-fs: 61.64px;
+    --h1-lh: 78px;
+
+    --h2-fs: 40px;
+    --h2-lh: 50px;
+
+    --h3-fs: 25px;
+    --h3-lh: 50px;
+
+    --h4-fs: 18px;
+    --h4-lh: 64px;
+
+    --body13-fs: 13px;
+    --body13-lh: 30px;
+
+    --body15-fs: 15px;
+    --body15-lh: 50px;
+
+    // Genaral Variable
+
+    --gap: 30px; // gap này sử dụng cho gap cột & padding của container, container-fluid
+
+    --height-header: 95px;
+    --height-button: 56px;
+    --ptop: 150px;
+    --pd-section: 70px;
+    --pd-container: calc((100vw - 1140px - 15px)/2);
+    @media (max-width: $sm-max) {
+        // Tablet
+        --h1-fs: 50px;
+
+        --h4-fs: 14px;
+    }
+    @media (max-width: $xs-max) {
+        // Mobile
+        // --h1-fs: 3.6rem;
+        --h1-fs: 45px;
+
+        --h4-fs: 13px;
+        --h2-lh: 3.8rem;
+
+        --h3-fs: 18px;
+        --h3-lh: 24px;
+
+
+        --gap: 20px;
+
+        --height-header: 70px;
+        --pd-section: 50px;
+        --ptop: 120px;
+    }
+}

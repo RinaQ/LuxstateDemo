@@ -1,0 +1,59 @@
+// // css navigator (Menu)
+.nav{
+    width: 65vw;
+    height: calc(100vh - var(--height-header));
+
+    position: fixed;
+    top: var(--height-header);
+    left: -100%;
+    
+    background-color: $white-cl;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    opacity: 0;
+    visibility: hidden;
+
+    animation-name: hidenav;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    transition: $t;
+    
+
+    ul{
+        li{
+            text-align: center;
+            padding: 15px 25px;
+            a{
+                @include text(15px, msb, normal, $text-cl, none );
+                @include transition($t);
+                &::hover{
+                    cursor: pointer;
+                    color: $yellow-cl;
+                    @include transition($t);
+                }
+            }
+            
+        }
+    }
+    &.active{
+        opacity: 0.85;
+        visibility: visible;
+        animation-name: shownav;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-duration: 1s;
+    }
+    @keyframes shownav {
+        from {left: -100%;}
+        to {left: 0;}
+    }
+    @keyframes hidenav {
+        from {left: 0;}
+        to {left: -100%;}
+    }
+}
